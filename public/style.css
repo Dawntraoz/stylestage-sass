@@ -600,7 +600,7 @@ nav ul a[href="/resources/"]::before {
 .profile ul li span:nth-child(2) a {
   color: inherit;
 }
-@media (min-width: 768px) {
+@media (min-width: 1600px) {
   .profile {
     position: fixed;
     top: 1rem;

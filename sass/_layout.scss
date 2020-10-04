@@ -3,6 +3,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family-sans);
+  word-break: break-word;
 }
 
 h1,
@@ -61,7 +62,7 @@ article {
 }
 
 article,
-#styles {
+#styles .container {
   padding: 1rem;
 }
 
@@ -72,12 +73,13 @@ article,
   justify-content: space-between;
   width: 100%;
   list-style: none;
+  padding-left: 0;
 }
 
 .features {
   display: grid;
   margin: 0 0 2rem;
   padding: 0;
-  grid-gap: 1em;
+  grid-gap: 1.5rem;
   list-style: none;
 }

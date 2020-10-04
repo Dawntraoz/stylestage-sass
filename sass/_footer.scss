@@ -32,4 +32,16 @@
   .container > :last-child {
     margin-bottom: 0;
   }
+
+  ul > li {
+    padding-bottom: 1rem;
+
+    &,
+    a { width: 100%; }
+
+    @media (min-width: 768px) {
+      &,
+      a { width: auto; }
+    }
+  }
 }

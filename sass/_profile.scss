@@ -46,34 +46,18 @@
   }
 
   @media (min-width: 768px) {
-    position: absolute;
-    top: 3rem;
-    left: -3rem;
-    right: -3rem;
-    padding: 1rem 3.5rem;
-    transform: translateY(1rem) rotateZ(-5deg);
-
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
 
     .container {
-      flex-direction: row;
-      justify-content: space-around;
       max-width: 100%;
+      width: 225px;
 
-      h4 {
-        margin: 0;
-        text-align: left;
-      }
-    }
-
-    ul {
-      margin: 0;
-      flex-wrap: unset;
-      justify-content: unset;
-
-      li {
-        justify-content: flex-start;
-        padding: 0 .5rem 0 0;
-        width: auto;
+      h4,
+      ul {
+        margin-bottom: 1rem;
       }
     }
   }

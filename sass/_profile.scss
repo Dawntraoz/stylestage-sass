@@ -1,25 +1,16 @@
 .profile {
-  width: 95vw;
-  max-width: 80ch;
-  margin: 1rem auto 10vh;
-  padding: 1.25rem;
+  padding: 2rem;
+  background-color: var(--color-secondary);
+  border-top: 4px solid var(--color-primary-alt);
+  color: var(--color-light);
+  box-shadow: 0 2px 4px rgba(0,0,0,.15);
   z-index: 1;
 
-  h4 {
-    margin: 0;
-    color: var(--color-secondary);
-    text-align: center;
-  }
-
   .container {
-    display: grid;
-    justify-items: center;
-    grid-gap: 1rem;
-
-    > a {
-      min-height: 2em;
-      border: 2px solid currentColor;
-      color: var(--color-secondary);
+    h4 {
+      color: inherit;
+      line-height: 1.25;
+      text-align: center;
     }
   }
 
@@ -27,24 +18,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
+    margin: 0 0 2rem;
     padding: 0;
     list-style: none;
 
     li {
       display: flex;
-      padding: 0.45em;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
 
       span:nth-child(1) {
         width: auto;
-        margin-right: 0.25em;
+        margin-right: 0.25rem;
+        font-size: 1.15rem;
         font-weight: var(--font-weight-strong);
       }
 
       span:nth-child(2) {
-        flex-grow: 1;
-        word-break: break-word;
-
+        font-size: 1rem;
         a {
           color: inherit;
         }
@@ -52,26 +45,35 @@
     }
   }
 
-  @media (min-width: 180ch) {
-    position: fixed;
-    right: 2vmin;
-    bottom: 2vmin;
-    max-width: 30ch;
-    margin-bottom: 0;
-    border-radius: var(--border-radius);
-    background-color: var(--color-light);
-    box-shadow: 0 2px 5px rgba(color(primary), 0.15);
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 3rem;
+    left: -3rem;
+    right: -3rem;
+    padding: 1rem 3.5rem;
+    transform: translateY(1rem) rotateZ(-5deg);
+
+
+    .container {
+      flex-direction: row;
+      justify-content: space-around;
+      max-width: 100%;
+
+      h4 {
+        margin: 0;
+        text-align: left;
+      }
+    }
 
     ul {
+      margin: 0;
+      flex-wrap: unset;
       justify-content: unset;
 
       li {
-        padding: 0;
-
-        span:nth-child(1) {
-          width: 8ch;
-          margin-right: 0;
-        }
+        justify-content: flex-start;
+        padding: 0 .5rem 0 0;
+        width: auto;
       }
     }
   }

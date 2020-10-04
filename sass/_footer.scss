@@ -1,32 +1,27 @@
 .page-footer {
-  --logomark-height: 2em;
-  --logomark-padding: 0;
-
   position: relative;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 6rem;
   background-color: var(--color-primary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d2fbf7' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: center -34px;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='#{svgColor(secondary)}' fill-opacity='0.5'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   color: var(--color-light);
 
   &::before {
-    @include logomark;
-
-    position: absolute;
-    left: 50%;
-    width: 2em;
-    transform: translate(-50%, -100%);
-    background-color: var(--color-background);
-    color: var(--color-primary);
-    font-size: 3rem;
     content: "S";
+    position: absolute;
+    left: 25%;
+    transform: translate(-50%, -75%) rotateZ(-35deg);
+    color: var(--color-primary-alt);
+    font-size: 8rem;
   }
 
   p:first-child {
-    margin-top: 3rem;
-    font-weight: var(--font-weight-strong);
-    letter-spacing: 0.03em;
+    font-family: var(--font-family-serif);
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
     text-align: center;
   }
 
@@ -34,11 +29,19 @@
     color: inherit;
   }
 
-  ul {
-    grid-template-columns: repeat(auto-fit, minmax(12ch, auto));
-  }
-
   .container > :last-child {
     margin-bottom: 0;
+  }
+
+  ul > li {
+    padding-bottom: 1rem;
+
+    &,
+    a { width: 100%; }
+
+    @media (min-width: 768px) {
+      &,
+      a { width: auto; }
+    }
   }
 }

@@ -4,24 +4,23 @@ h3,
 h4 {
   font-weight: var(--font-weight-strong);
   line-height: 1;
-  margin-bottom: 0.65em;
+  margin-bottom: 2rem;
 }
 
 h1 {
   font-size: var(--font-size-h1);
-  font-size: clamp(2rem, 7vw, var(--font-size-h1));
+  font-size: clamp(3.5rem, 7vw, var(--font-size-h1));
 }
 
 h2 {
   font-size: var(--font-size-h2);
   font-size: clamp(2rem, 4vw, var(--font-size-h2));
-  text-align: center;
+  line-height: 1.15;
 }
 
 #main h2 {
-  background-color: var(--color-secondary);
-  align-self: center;
-  color: var(--color-background);
+  width: 100%;
+  border-left: 1rem solid var(--color-secondary);
   padding: 0.25em 0.5em;
 }
 
@@ -120,6 +119,37 @@ blockquote {
 
     @media (max-width: 60rem) {
       transform: translate(25%, 55%) rotate(-5deg);
+    }
+  }
+}
+
+ol {
+  counter-reset: my-awesome-counter;
+  list-style: none;
+
+  li {
+    margin: 0 0 2rem 0;
+    counter-increment: my-awesome-counter;
+    position: relative;
+
+    &::before {
+      content: counter(my-awesome-counter);
+
+      position: absolute;
+      top: -10px;
+      left: -50px;
+      
+      width: 40px;
+      height: 40px;
+
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      
+      color: var(--color-light);
+      background-color: var(--color-secondary);
+      border-radius: 50%;
+      box-shadow: 2px 2px 0 var(--color-primary-alt);
     }
   }
 }
